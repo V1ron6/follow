@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Follow</title>
+  <meta name="description" content="Auto-scrolling PDF presenter. Set a speed, press play.">
+  <meta name="theme-color" content="#0e0f12">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/toolbar.css">
+  <link rel="stylesheet" href="styles/viewer.css">
+</head>
+<body>
+
+  <div id="bar" class="hidden">
+    <img class="logo-sm" src="assets/logo.svg" alt="Follow" width="28" height="28">
+    <button id="open">Open PDF</button>
+    <span id="name"></span>
+    <div class="grp">
+      <button id="play">Play</button>
+      <input id="speed" type="range" min="5" max="400" step="5" value="60" aria-label="Scroll speed">
+      <span id="sv">60 px/s</span>
+    </div>
+    <div class="grp">
+      <button id="zout" aria-label="Zoom out">−</button>
+      <span id="zv">100%</span>
+      <button id="zin" aria-label="Zoom in">+</button>
+    </div>
+    <button id="top">⟲ Top</button>
+    <span class="sp"></span>
+    <span class="kbd">Space play · ↑↓ speed · +/− zoom · F fullscreen</span>
+    <button id="fs">Fullscreen</button>
+  </div>
+
+  <main id="viewer"><div id="pages"></div></main>
+  <div id="prog"></div>
+
+  <section id="empty">
+    <img class="logo-lg" src="assets/logo.svg" alt="" width="96" height="96">
+    <h1>Follow</h1>
+    <p>Drop a PDF here, or pick one. It stays in your browser and is gone when you close the tab.</p>
+    <button id="open2" class="on">Open PDF</button>
+  </section>
+
+  <input id="file" type="file" accept="application/pdf" class="hidden">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="scripts/config.js"></script>
+  <script src="scripts/viewer.js"></script>
+  <script src="scripts/scroller.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

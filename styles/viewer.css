@@ -1,0 +1,27 @@
+#viewer {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 70px 12px 60vh;
+}
+
+#pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pg { background: #fff; box-shadow: 0 2px 14px rgba(0, 0, 0, .5); }
+.pg canvas { display: block; }
+
+#prog {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: var(--acc);
+  z-index: 6;
+}
